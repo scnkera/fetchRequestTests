@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Fetch demo</title>
+  </head>
+  <body>
+    <p>Look in the console!</p>
+    <script>
+        console.log('Hello world!')
+
+        const response = fetch('http://careersincode.xyz/fruit', {
+          method: 'GET',
+          headers: {}
+        });
+        console.log("Right after fetch:", response)
+
+        response.then((dataInBox) => {
+          console.log('There is stuff in the box!', dataInBox);
+        });
+    </script>
+  </body>
+</html>

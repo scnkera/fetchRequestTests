@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Demo</title>
+</head>
+<body>
+    <p>Look in the console!</p>
+    <script>
+        console.log('Hello world!')
+
+        const response = fetch('http://careersincode.xyz/fruit', {
+          method: 'GET',
+          headers: {}
+        });
+        console.log("Right after fetch:", response)
+
+        response.then((dataInBox) => {
+          console.log('There is stuff in the box!', dataInBox);
+        });
+    </script>
+  </body>
+</html>

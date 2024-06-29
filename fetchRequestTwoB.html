@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Fetch demo</title>
+  </head>
+  <body>
+    <p>Look in the console!</p>
+    <script>
+        console.log('Hello world!')
+
+        const responsePromise = fetch('http://careersincode.xyz/text-processing/frequencies', {
+          method: 'POST',
+          headers: {},
+          body: "the quick brown fox jumped over the lazy dog"
+        });
+        console.log("Right after fetch:", responsePromise)
+
+        responsePromise.then((dataInBox) => {
+          console.log('There is stuff in the box!', dataInBox);
+
+          const responseBodyPromise = dataInBox.text();
+          responseBodyPromise.then((body) => {
+            console.log('Response body:', body)
+          });
+        });
+    </script>
+  </body>
+</html>
